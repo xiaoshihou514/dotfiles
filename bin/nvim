@@ -1,2 +1,0 @@
-#! /bin/bash
-exec /home/xiaoshihou/Applications/bin/nvim-linux64/bin/nvim $@

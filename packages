@@ -1,5 +1,7 @@
 pcmanfm 
 alacritty 
+spectrwm
+kitty
 leftwm 
 pfetch 
 conky 
@@ -8,13 +10,10 @@ fish-shell
 starship 
 vim 
 polybar 
-nerd-fonts 
+ubuntu mono nerd font
 feh 
+nitrogen
 sddm 
 font-sarasa-gothic
 feh
-qt5 
-qt5-quickcontrols2
-qt5-svg
-qt5-graphicaleffects
 picom

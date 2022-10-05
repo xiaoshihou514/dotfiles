@@ -1,2 +1,0 @@
-#! /bin/bash
-cp ~/dotfiles/bin/nvim ~/.local/bin/nvim
