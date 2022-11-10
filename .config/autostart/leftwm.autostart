@@ -1,5 +1,0 @@
-#! /bin/bash
-if [ $XDG_SESSION_DESKTOP == leftwm ]; then
-  cd /home/xiaoshihou/.config/leftwm/themes/current
-  ./up &
-fi
