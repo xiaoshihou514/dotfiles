@@ -1,4 +1,0 @@
-#! /bin/bash
-cd ~/dotfiles
-sudo cp -r sddm_sugar_dark/sddm_sugar_dark /usr/share/themes/
-sudo cp -r sddm/sddm.conf.d/ /etc

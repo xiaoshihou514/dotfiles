@@ -1,8 +1,0 @@
-#! /bin/bash
-defaultpath=/home/xiaoshihou/.config/leftwm/themes
-leftwm command "unloaded theme" &
-pkill conky &
-pkill picom &
-feh --bg-scale $defaultpath/blank.jpeg &
-rm -rf ~/.config/rofi/ &
-cp -f $defaultpath/alacritty.yml ~/.config/alacritty/
