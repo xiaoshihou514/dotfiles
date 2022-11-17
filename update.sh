@@ -1,4 +1,9 @@
 #! /bin/bash
+cp -f ~/.zshrc ~/Playground/dotfiles
+cp -rf ~/.config/kitty/ ~/Playground/dotfiles/.config/
+cp -rf ~/.config/spectrwm/ ~/Playground/dotfiles/.config/
+cp -rf ~/.config/lvim/ ~/Playground/dotfiles/.config/
+cp -rf ~/.config/touchegg/ ~/Playground/dotfiles/.config/
 git add .
 read -p "Commit message: " msg
 git commit -m "${msg}" 
