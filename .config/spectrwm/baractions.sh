@@ -2,7 +2,7 @@
 # forked from https://gitlab.com/dwt1/dotfiles/-/blob/master/baraction.sh
 
 hdd() {
-  hdd="$(df -h | awk 'NR==4{print $4}')"
+  hdd="$(df -h | awk 'NR==5{print $4}')"
   echo -e "$hdd"
 }
 
@@ -23,6 +23,7 @@ cpu() {
 }
 
 vol() {
+    //broken
     vol=`amixer get Master | awk -F'[][]' 'END{ print $4":"$2 }' | sed 's/on://g'`
     echo -e "VOL: $vol"
 }
