@@ -1,1 +1,1 @@
-# My personal backup of my dotfiles
+# A personal backup of my dotfiles
