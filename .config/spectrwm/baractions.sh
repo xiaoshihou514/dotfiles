@@ -23,9 +23,8 @@ cpu() {
 }
 
 vol() {
-    //broken
-    vol=`amixer get Master | awk -F'[][]' 'END{ print $4":"$2 }' | sed 's/on://g'`
-    echo -e "VOL: $vol"
+    vol=`pamixer --get-volume`
+    echo -e "VOL: $vol%"
 }
 
 net() {
