@@ -19,12 +19,12 @@ cpu() {
   total=$((a+b+c+idle))
   cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
   temp=`sensors -A | grep Tctl | awk '{print $2}'`
-  echo -e "CPU: $cpu% +@fg=2;+@fg=0; "${temp:1}
+  echo -e "CPU: $cpu% +@fg=1;+@fg=0; "${temp:1}
 }
 
 vol() {
     vol=`pamixer --get-volume`
-    echo -e "VOL: $vol%"
+    echo -e "$vol%"
 }
 
 net() {
@@ -54,7 +54,7 @@ net() {
       up_unit='Mb'
     fi
   fi
-  echo -e "+@fg=2;+@fg=0;  "$up$up_unit"/s  +@fg=2;+@fg=0;  "$down$down_unit"/s"
+  echo -e "+@fg=1;+@fg=0;  "$up$up_unit"/s  +@fg=1;+@fg=0;  "$down$down_unit"/s"
 }
 
 battery() {
@@ -79,18 +79,18 @@ battery() {
   if [ $state == 'Full,' ]; then
     icon=
   fi
-  echo -e '+@fg=2;'$icon'  +@fg=0;'$percentage%
+  echo -e '+@fg=1;'$icon'  +@fg=0;'$percentage%
 }
 
 time_date() {
-  date "+%a, %b%e, %T"
+  date "+%a, %b%e, %H:%I"
 }
 
 
 SLEEP_SEC=0.5
 
 while :; do
-    echo " +@fg=2;+@fg=0;  $(hdd)  $(net)  +@fg=2;+@fg=0;  $(cpu)  +@fg=2;+@fg=0;  $(mem)  +@fg=2;  +@fg=0;$(vol)  $(battery)  +@fg=2;  +@fg=0;$(time_date)"
+    echo " +@fg=1;+@fg=0;  $(hdd)  $(net)  +@fg=1;+@fg=0;  $(mem)  +@fg=1; +@fg=0;$(vol)  $(battery)  +@fg=1;  +@fg=0;$(time_date)"
 	sleep $SLEEP_SEC
 done
 

@@ -15,6 +15,7 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.breadcrumbs = true
 
 -- Options and keybinds
 local opts = { noremap = true, silent = true }
