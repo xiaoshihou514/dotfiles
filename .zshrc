@@ -21,15 +21,24 @@ alias xq='xbps-query -s'
 
 alias grep='grep --color=auto'
 alias la='ls -lah'
+alias l=ls
 
 alias wget='wget --no-check-certificate'
 alias proxy='export http_proxy='127.0.0.1:9910' && export https_proxy='127.0.0.1:9910''
 
+alias vim=/usr/bin/nvim
+alias nvim=lvim
+
 # Exports
 export QT_QPA_PLATFORMTHEME=qt5ct 
+export PATH=$PATH:~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
+fpath+=~/.config/zsh
 
 # Make zsh save history
 HISTFILE=~/.zhistory
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory
+
+# Init completions
+compinit
