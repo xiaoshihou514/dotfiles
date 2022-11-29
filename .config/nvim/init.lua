@@ -1,3 +1,7 @@
-require "user.options"
-require "user.keymaps"
-vim.cmd[[colorscheme horizon]]
+require("user.options")
+require("user.keymaps")
+require("user.plugins")
+require("user.telescope")
+require("user.alpha")
+require("user.neoscroll")
+vim.cmd([[colorscheme synthwave84]])

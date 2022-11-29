@@ -22,12 +22,13 @@ alias xq='xbps-query -s'
 alias grep='grep --color=auto'
 alias la='ls -lah'
 alias l=ls
-
 alias wget='wget --no-check-certificate'
 alias proxy='export http_proxy='127.0.0.1:9910' && export https_proxy='127.0.0.1:9910''
 
 alias vim=/usr/bin/nvim
 alias nvim=lvim
+
+alias g=lazygit
 
 # Exports
 export QT_QPA_PLATFORMTHEME=qt5ct 
