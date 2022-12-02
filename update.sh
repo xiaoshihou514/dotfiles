@@ -10,7 +10,7 @@ cp -rf ~/.config/dunst/ ~/Playground/dotfiles/.config/
 cp -rf ~/.config/nvim/ ~/Playground/dotfiles/.config/
 cp -rf ~/.config/zsh/ ~/Playground/dotfiles/.config/
 cp -rf ~/.config/neofetch/ ~/Playground/dotfiles/.config/
-cp -rf ~/.local/bin/ ~/Playground/dotfiles/.local/
+#cp -rf ~/.local/bin/ ~/Playground/dotfiles/.local/
 cp -rf ~/.local/share/fonts/ ~/Playground/dotfiles/.local/share/
 git add .
 read -p "Commit message: " msg
