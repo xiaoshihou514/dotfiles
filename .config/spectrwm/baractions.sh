@@ -60,7 +60,11 @@ net() {
 battery() {
   state=`acpi | grep 0: | awk '{print $3}' | sed 's/.$//'`
   percentage=`acpi | grep 0: | awk '{print $4}'`
-  percentage=$((${percentage%?}))
+  if [ $state == 'Full' ]; then
+    percentage=$((${percentage%?}))
+  else
+    percentage=$((${percentage%??}))
+  fi
   icon=''
   if [ $state == 'Charging' ]; then
     icon=' '
@@ -83,7 +87,7 @@ battery() {
 }
 
 time_date() {
-  date "+%a, %b%e, %H:%I"
+  date "+%a, %b%e, %H:%M"
 }
 
 
