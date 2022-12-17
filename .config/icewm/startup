@@ -1,0 +1,5 @@
+#! /bin/bash
+nitrogen --restore &
+touchegg --daemon &
+sleep 3 &
+touchegg &

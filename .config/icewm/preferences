@@ -1,0 +1,81 @@
+#  Show CPU frequency in CPU status tool tip.
+CPUStatusShowCpuFreq=0
+
+#  Show RAM usage in CPU status tool tip.
+CPUStatusShowRamUsage=0
+
+#  Show swap usage in CPU status tool tip.
+CPUStatusShowSwapUsage=0
+
+#  Opens the address bar in the task bar where a command can be typed.
+KeySysAddressBar="Alt+F2"
+
+#  Goes to workspaces.
+KeySysWorkspace1="Alt+1"
+KeySysWorkspace2="Alt+2"
+KeySysWorkspace3="Alt+3"
+KeySysWorkspace4="Alt+4"
+
+#  Goes one workspace to the right.
+KeySysWorkspaceNext="Alt+Shift+j"
+
+#  Takes the active window one workspace to the right.
+KeySysWorkspaceNextTakeWin="Alt+Shift+l"
+
+#  Goes one workspace to the left.
+KeySysWorkspacePrev="Alt+Ctrl+k"
+
+#  Takes the active window one workspace to the left.
+KeySysWorkspacePrevTakeWin="Alt+Shift+h"
+
+#  Closes the active window.
+KeyWinClose="Alt+q"
+
+#  Makes the active window occupy all work spaces.
+#  Use a super complex keybind to disable this feature
+KeyWinOccupyAll="Alt+Ctrl+Shift+j+k+1+0+F6+F2"
+
+#  Let the active window occupy the left half of the screen.
+KeyWinTileLeft="Super+Left"
+
+#  Let the active window occupy the right half of the screen.
+KeyWinTileRight="Super+Right"
+
+#  Let the active window occupy the top left quarter of the screen.
+KeyWinTileTopLeft="Super+Up+Left"
+
+#  Let the active window occupy the top right quarter of the screen.
+KeyWinTileTopRight="Super+Up+Right"
+
+#  Command to lock display/screensaver.
+Lloginctl terminate-session ${XDG_SESSION_ID-}ockCommand="cinnamon-screensaver-command -l"
+
+#  Command to start logout.
+LogoutCommand="loginctl terminate-session ${XDG_SESSION_ID-}"
+
+#  Command to reboot the system.
+RebootCommand="loginctl reboot"
+
+#  Command to shutdown the system.
+ShutdownCommand="loginctl poweroff"
+
+#  Command to send the system to standby mode.
+SuspendCommand="loginctl suspend"
+
+#  Show battery status monitor on task bar.
+TaskBarShowAPMStatus=1
+
+#  Show CPU status on task bar.
+TaskBarShowCPUStatus=0
+
+#  Show memory usage status on task bar (Linux only)
+TaskBarShowMEMStatus=0
+
+#  Show mailbox status on task bar.
+TaskBarShowMailboxStatus=0
+
+#  Show network status on task bar.
+TaskBarShowNetStatus=0
+
+#  Add a workspace.
+WorkspaceNames=" 1 ", " 2 ", " 3 ", " 4 "
