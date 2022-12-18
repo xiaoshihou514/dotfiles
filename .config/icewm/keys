@@ -15,6 +15,7 @@
 #key "Super+KP_Subtract"     amixer sset Master 5%-
 #key "Super+KP_Add"          amixer sset Master 5%+
 key "Alt+Enter"              kitty
+key "Alt+e"                  caja
 key "Alt+Shift+f"            firefox
 key "Alt+Shift+d"            rofi -show drun
 key "Alt+Shift+x"            rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu
