@@ -17,7 +17,8 @@ eval "$(starship init zsh)"
 alias xi='sudo xbps-install'
 alias xr='sudo xbps-remove'
 alias xqr='xbps-query -Rs'
-alias xq='xbps-query -s'
+alias xqs='xbps-query -s'
+alias xql='xbps-query -l'
 alias xbps='fuzzypkg'
 
 alias grep='grep --color=auto'

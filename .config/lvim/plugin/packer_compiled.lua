@@ -188,11 +188,6 @@ _G.packer_plugins = {
     path = "/home/xiaoshihou/.local/share/lunarvim/site/pack/packer/opt/neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
   },
-  ["neoscroll.nvim"] = {
-    loaded = true,
-    path = "/home/xiaoshihou/.local/share/lunarvim/site/pack/packer/start/neoscroll.nvim",
-    url = "https://github.com/karb94/neoscroll.nvim"
-  },
   ["nlsp-settings.nvim"] = {
     loaded = true,
     path = "/home/xiaoshihou/.local/share/lunarvim/site/pack/packer/start/nlsp-settings.nvim",
@@ -327,6 +322,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/xiaoshihou/.local/share/lunarvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-smoothie"] = {
+    loaded = true,
+    path = "/home/xiaoshihou/.local/share/lunarvim/site/pack/packer/start/vim-smoothie",
+    url = "https://github.com/opalmay/vim-smoothie"
   },
   ["which-key.nvim"] = {
     config = { "\27LJ\2\2A\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\24lvim.core.which-key\frequire\0" },

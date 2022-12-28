@@ -85,9 +85,10 @@ lvim.plugins = {
 			require("fidget").setup()
 		end,
 	},
-	"karb94/neoscroll.nvim",
+  "opalmay/vim-smoothie",
 }
 
--- neoscroll
-reload("user.neoscroll")
+-- vim-smoothie
+reload("user.smoothie")
+-- starter.lvim
 require("user.rust-starter")

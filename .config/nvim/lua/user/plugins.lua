@@ -47,7 +47,7 @@ return packer.startup(function(use)
 	use("lunarvim/horizon.nvim")
 	use("goolord/alpha-nvim")
 	use("nvim-telescope/telescope.nvim")
-	use("karb94/neoscroll.nvim")
+	use("opalmay/vim-smoothie")
 	use("lunarvim/synthwave84.nvim")
 	-- Treesitter
 	use({
