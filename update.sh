@@ -1,7 +1,6 @@
 #! /bin/bash
 cp -f ~/.zshrc ~/Playground/dotfiles
 #cp -rf ~/.config/kitty/ ~/Playground/dotfiles/.config/
-cp -rf ~/.config/icewm/ ~/Playground/dotfiles/.config/
 cp -rf ~/.config/lvim/ ~/Playground/dotfiles/.config/
 #cp -rf ~/.config/rofi/ ~/Playground/dotfiles/.config/
 #cp -rf ~/.config/touchegg/ ~/Playground/dotfiles/.config/

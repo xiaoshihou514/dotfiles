@@ -85,7 +85,7 @@ lvim.plugins = {
 			require("fidget").setup()
 		end,
 	},
-  "opalmay/vim-smoothie",
+	"opalmay/vim-smoothie",
 }
 
 -- vim-smoothie

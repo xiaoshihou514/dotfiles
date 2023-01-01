@@ -29,7 +29,6 @@ alias psaux='ps -aux | grep'
 alias proxy='export http_proxy='127.0.0.1:9910' && export https_proxy='127.0.0.1:9910''
 
 alias v=/usr/bin/vi
-alias vi=/usr/bin/vim
 alias vim=/usr/bin/nvim
 alias nvim=lvim
 
