@@ -16,16 +16,18 @@ eval "$(starship init zsh)"
 # Alias
 alias xi='sudo xbps-install'
 alias xr='sudo xbps-remove'
+alias xq='xbps-query'
 alias xqr='xbps-query -Rs'
 alias xqs='xbps-query -s'
 alias xql='xbps-query -l'
+alias xro='sudo xbps-remove -O && sudo xbps-remove -o'
 alias xbps='fuzzypkg'
 
 alias grep='grep --color=auto'
-alias la='ls -lah'
+alias la='ls -lAh'
 alias l=ls
 alias wget='wget --no-check-certificate'
-alias psaux='ps -aux | grep'
+alias psa='ps -aux | grep'
 alias proxy='export http_proxy='127.0.0.1:9910' && export https_proxy='127.0.0.1:9910''
 
 alias v=/usr/bin/vi
@@ -40,7 +42,6 @@ alias bottles='flatpak run com.usebottles.bottles'
 
 # Exports
 export PATH=$PATH:~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
-export PATH=$PATH:~/.emacs.d/bin
 fpath+=~/.config/zsh
 
 # Make zsh save history

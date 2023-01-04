@@ -1,5 +1,7 @@
 #! /bin/bash
 cp -f ~/.zshrc ~/Playground/dotfiles
+cp -rf ~/.icons ~/Playground/dotfiles
+cp -rf ~/.themes ~/Playground/dotfiles
 #cp -rf ~/.config/kitty/ ~/Playground/dotfiles/.config/
 cp -rf ~/.config/lvim/ ~/Playground/dotfiles/.config/
 #cp -rf ~/.config/rofi/ ~/Playground/dotfiles/.config/
