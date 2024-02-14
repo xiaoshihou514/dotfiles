@@ -1,0 +1,156 @@
+[/]
+alttab-switcher-delay=100
+desklet-snap-interval=25
+desktop-effects-map='traditional'
+desktop-effects-minimize='traditional'
+device-aliases=['/org/freedesktop/UPower/devices/battery_BAT0:=Celxpert L20C4PC1']
+enabled-applets=['panel1:left:0:menu@cinnamon.org:0', 'panel1:right:10:notifications@cinnamon.org:5', 'panel1:right:11:printers@cinnamon.org:6', 'panel1:right:12:removable-drives@cinnamon.org:7', 'panel1:right:15:network@cinnamon.org:10', 'panel1:right:16:sound@cinnamon.org:11', 'panel1:right:17:power@cinnamon.org:12', 'panel1:right:18:calendar@cinnamon.org:13', 'panel1:right:5:systray@cinnamon.org:16', 'panel1:right:1:xapp-status@cinnamon.org:20', 'panel1:left:1:window-list@cinnamon.org:21']
+hotcorner-layout=['expo:false:0', 'scale:false:0', 'scale:false:0', 'desktop:false:0']
+next-applet-id=22
+panel-edit-mode=false
+panel-zone-icon-sizes='[{"panelId": 1, "left": 32, "center": 0, "right": 0}]'
+panel-zone-symbolic-icon-sizes='[{"panelId": 1, "left": 28, "center": 28, "right": 16}]'
+panels-autohide=['1:intel']
+panels-enabled=['1:0:top']
+panels-height=['1:30']
+window-effect-speed=1
+workspace-expo-view-as-grid=true
+
+[cinnamon-session]
+quit-time-delay=60
+
+[desktop/a11y/applications]
+screen-keyboard-enabled=true
+
+[desktop/applications/calculator]
+exec='qalculate-gtk'
+
+[desktop/applications/terminal]
+exec='kitty'
+
+[desktop/background]
+picture-uri='file:///home/xiaoshihou/Pictures/Distro%20Wallpaper/Void/void_ani.png'
+
+[desktop/background/slideshow]
+delay=15
+image-source='directory:///home/xiaoshihou/Pictures/Distro Wallpaper/Void'
+
+[desktop/interface]
+cursor-blink-time=336
+cursor-size=24
+cursor-theme='Vimix-cursors'
+first-day-of-week=1
+font-name='CaskaydiaCove Nerd Font Mono Semi-Light 9'
+gtk-theme='Catppuccin-Macchiato-Standard-Sky-Dark'
+icon-theme='DeepOcean'
+text-scaling-factor=1.0
+toolkit-accessibility=true
+
+[desktop/keybindings]
+custom-list=['custom2', 'custom0', '__dummy__']
+
+[desktop/keybindings/custom-keybindings/custom0]
+binding=['<Alt>slash']
+command='flameshot gui'
+name='flameshot'
+
+[desktop/keybindings/custom-keybindings/custom2]
+binding=['<Primary><Alt>c']
+command='/home/xiaoshihou/.config/conky/toggle.sh'
+name='toggle conky'
+
+[desktop/keybindings/media-keys]
+home=['XF86Explorer', '<Super>e']
+screenshot=@as []
+terminal=['<Primary><Alt>t', '<Alt>Return']
+video-rotation-lock=@as []
+www=['XF86WWW', '<Shift><Alt>f']
+
+[desktop/keybindings/wm]
+activate-window-menu=@as []
+close=['<Alt>F4', '<Alt>q']
+decrease-opacity=['<Shift><Super>o']
+increase-opacity=['<Super>o']
+maximize=['<Shift><Alt>m']
+minimize=['<Alt>m']
+switch-to-workspace-1=['<Alt>1']
+switch-to-workspace-2=['<Alt>2']
+switch-to-workspace-3=['<Alt>3']
+switch-to-workspace-4=['<Alt>4']
+switch-to-workspace-5=['<Alt>5']
+switch-to-workspace-6=['<Alt>6']
+switch-to-workspace-7=['<Alt>7']
+switch-to-workspace-8=['<Alt>8']
+switch-to-workspace-9=['<Alt>9']
+switch-to-workspace-down=['<Control><Alt>Down']
+switch-to-workspace-up=['<Control><Alt>Up', '<Alt>F1', '<Super>Tab']
+toggle-fullscreen=['<Alt>F11']
+toggle-maximized=@as []
+unmaximize=@as []
+
+[desktop/media-handling]
+autorun-never=false
+autorun-x-content-ignore=@as []
+autorun-x-content-open-folder=@as []
+autorun-x-content-start-app=@as []
+
+[desktop/peripherals/keyboard]
+delay=uint32 500
+numlock-state=true
+repeat-interval=uint32 30
+
+[desktop/peripherals/mouse]
+accel-profile='default'
+double-click=400
+drag-threshold=8
+speed=0.0
+
+[desktop/peripherals/touchpad]
+speed=0.0
+tap-to-click=true
+
+[desktop/screensaver]
+font-message='Comic Mono 14'
+lock-enabled=false
+show-clock=false
+
+[desktop/session]
+idle-delay=uint32 0
+
+[desktop/sound]
+event-sounds=false
+
+[desktop/wm/preferences]
+min-window-opacity=30
+titlebar-font='CaskaydiaCove Nerd Font Mono Bold 10'
+
+[launcher]
+check-frequency=300
+memory-limit=2048
+memory-limit-enabled=false
+
+[muffin]
+draggable-border-width=10
+tile-maximize=true
+workspace-cycle=true
+
+[settings-daemon/peripherals/keyboard]
+numlock-state='off'
+
+[settings-daemon/plugins/power]
+button-power='interactive'
+idle-dim-time=600
+lid-close-ac-action='suspend'
+lid-close-battery-action='suspend'
+lock-on-suspend=false
+sleep-display-ac=1800
+sleep-display-battery=1800
+sleep-inactive-ac-timeout=0
+sleep-inactive-battery-timeout=0
+
+[settings-daemon/plugins/xsettings]
+buttons-have-icons=false
+menus-have-icons=false
+
+[theme]
+name='Catppuccin-Macchiato-Standard-Sky-Dark'

@@ -1,0 +1,13 @@
+#unified-extensions-view {
+    --uei-icon-size: 20px !important;
+    width: 280px !important;
+}
+.panel-header,
+.unified-extensions-item-message-deck,
+.unified-extensions-item-menu-button.subviewbutton {
+    display: none !important;
+}
+
+.panel-subview-footer-button {
+    text-align-last: center !important;
+}

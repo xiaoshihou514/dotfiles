@@ -1,0 +1,20 @@
+@-moz-document url("about:blank"),
+url("about:newtab") {
+  body {
+    background: url("wallpaper/星降る天魔の山_96426550.png") center/cover no-repeat fixed !important;
+  }
+}
+
+/* invert pdf colors */
+#sidebarContainer > #sidebarContent > #thumbnailView {
+    --sidebaritem-bg-color: #38383D;
+}
+
+#viewerContainer > #viewer > .page > .canvasWrapper > canvas {
+    filter: grayscale(100%) invert(90%);
+}
+
+#sidebarContainer > #sidebarContent > #thumbnailView .thumbnailImage {
+    filter: grayscale(100%) invert(90%);
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.5), 0 2px 8px hsla(0, 0%, 100%, 0.3) !important;
+}

@@ -1,0 +1,26 @@
+baidu.com###s_side_wrapper
+baidu.com###s-top-left
+baidu.com###u1
+baidu.com###bottom_layer > div.s-bottom-layer-content
+baidu.com###s-hotsearch-wrapper
+baidu.com###u
+baidu.com###content_right
+bilibili.com###i_cecream > div.adblock-tips:nth-child(2)
+bilibili.com##.right-entry-icon
+bilibili.com##.right-entry-text
+bilibili.com##.header-upload-entry
+bilibili.com##.download-entry, .download-client-trigger
+bilibili.com##.v-popover-wrap
+bilibili.com##.primary-btn, .feedback, .visible
+bilibili.com##.nav-menu
+bilibili.com##.rec-list
+bilibili.com##.login-tip
+bilibili.com##.pl__card
+bilibili.com###right-bottom-banner
+bilibili.com##.pl__head
+bilibili.com##.inside-wrp
+bilibili.com###reco_list > div.next-play:first-child
+youtube.com###secondary
+baidu.com###s_main
+startpage.com###block-display > div.themeProvider.css-1pepxtj > div.css-mtj8kd:first-child
+
