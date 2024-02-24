@@ -94,5 +94,7 @@ function icat
 end
 
 function man
-    vi "+tab Man $argv" "+norm gt" +quit
+    vi "+tab Man $argv" \
+        "+norm gt" \
+        "+quit"
 end
