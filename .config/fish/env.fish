@@ -22,3 +22,5 @@ wezterm shell-completion --shell fish | source
 set -g GLFW_IM_MODULE ibus
 
 . $HOME/.nix-profile/etc/profile.d/nix.fish
+
+flamegraph --completions fish | source

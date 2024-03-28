@@ -18,7 +18,6 @@ function full-upgrade
     flatpak update -y
     flatpak remove --unused -y
     update-neovim
-    fastfetch
 end
 
 function cd
@@ -47,12 +46,13 @@ function audio-truncate
 end
 
 function update-neovim
-    set url "https://github.com/neovim/neovim/releases/download/nightly/"
+	# set url "https://github.com/neovim/neovim/releases/download/nightly/"
+    set url "https://mirror.ghproxy.com/https://github.com/neovim/neovim/releases/download/nightly/"
     set tarball "nvim-linux64.tar.gz"
     set chksum "nvim-linux64.tar.gz.sha256sum"
     builtin cd $HOME/Applications/
-    wget -qq $url$tarball
-    wget -qq $url$chksum
+    wget $url$tarball
+    wget $url$chksum
     if test (sha256sum -c $chksum) != "nvim-linux64.tar.gz: OK"
         set_color red
         echo "Neovim binary corrupted!"

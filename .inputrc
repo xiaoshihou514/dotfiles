@@ -1,0 +1,12 @@
+$if Gdb
+# F10 -> step over
+"^[[21~": "next\n"
+# F11 -> step into
+"^[[23~": "step\n"
+# S-F11 -> step out
+"^[[23;2~": "finish\n"
+# F5 -> continue
+"^[[15": "continue\n"
+# S-F5 -> terminate
+"^[[15;2~": "kill\n"
+$endif
