@@ -46,8 +46,8 @@ function audio-truncate
 end
 
 function update-neovim
-	# set url "https://github.com/neovim/neovim/releases/download/nightly/"
-    set url "https://mirror.ghproxy.com/https://github.com/neovim/neovim/releases/download/nightly/"
+    set url "https://github.com/neovim/neovim/releases/download/nightly/"
+    # set url "https://mirror.ghproxy.com/https://github.com/neovim/neovim/releases/download/nightly/"
     set tarball "nvim-linux64.tar.gz"
     set chksum "nvim-linux64.tar.gz.sha256sum"
     builtin cd $HOME/Applications/
@@ -97,4 +97,12 @@ function man
     vi "+tab Man $argv" \
         "+norm gt" \
         "+quit"
+end
+
+function subaudio
+    if test $argc != 4
+        echo subaudio [file] [start] [length] [out]
+        return
+    end
+    ffmpeg -i $argv[1] -ss $argv[2] -t $argv[3] $argv[4]
 end

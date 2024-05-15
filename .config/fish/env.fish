@@ -11,6 +11,8 @@ fish_add_path $HOME/Applications/detekt-cli-1.23.3/bin
 fish_add_path $HOME/Applications/flutter/bin
 fish_add_path $HOME/Applications/android_sdk/cmdline-tools/latest/bin
 fish_add_path $HOME/.gem/bin
+fish_add_path $HOME/.local/share/coursier/bin
+fish_add_path $HOME/.local/share/juliaup/bin
 
 # Setup programs
 zoxide init fish | source
@@ -24,3 +26,5 @@ set -g GLFW_IM_MODULE ibus
 . $HOME/.nix-profile/etc/profile.d/nix.fish
 
 flamegraph --completions fish | source
+
+set -g HF_ENDPOINT https://hf-mirror.com
