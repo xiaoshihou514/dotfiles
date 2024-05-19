@@ -9,7 +9,6 @@ end
 
 update fish
 update kitty
-update fastfetch
 
 git add .
 lazygit
