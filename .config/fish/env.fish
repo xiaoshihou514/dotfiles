@@ -1,7 +1,6 @@
 # Path
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/Applications/nvim-nightly/bin
-fish_add_path $HOME/.local/share/nanovim/mason/bin
 fish_add_path $HOME/Applications/lua_ls/bin
 fish_add_path $HOME/Applications/stylua-linux
 fish_add_path $HOME/.luarocks/bin

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty",
+    "source": "/home/xiaoshihou/Pictures/head.png",
+    "height": 20
+  },
+  "modules": [
+	"title",
+	"separator",
+        { "type": "os", "key":  " OS" },
+        { "type": "host", "key":  " PC" },
+        { "type": "kernel", "key":  " Kernel" },
+        { "type": "uptime", "key":  "󰅐 Uptime" },
+        { "type": "cpu", "key":  " CPU" },
+        { "type": "gpu", "key":  "󰍛 GPU" },
+        { "type": "memory", "key":  "󰑭 Memory" },
+        { "type": "disk", "key":  " Disk" },
+        { "type": "display", "key":  "󰍹 Display" },
+        { "type": "packages", "key":  "󰏖 Packages" },
+        { "type": "processes", "key":  " Processes" },
+        { "type": "shell", "key":  " Shell" },
+        { "type": "de", "key":  " DE" },
+        { "type": "terminal", "key":  " Terminal" },
+        { "type": "localip", "key":  "󰩠 localip" },
+        { "type": "break", "key":  "break" },
+    {
+      "type": "custom",
+      "format": "  \u001B[38m  \u001B[37m  \u001B[36m  \u001B[35m  \u001B[34m  \u001B[33m  \u001B[32m  \u001B[31m  \t"
+    }
+  ]
+}
