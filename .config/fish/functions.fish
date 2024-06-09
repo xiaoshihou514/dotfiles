@@ -30,6 +30,11 @@ function z
     test (/bin/ls -l | count) -lt 141; and ls
 end
 
+function zi
+    __zoxide_zi $argv
+    test (/bin/ls -l | count) -lt 141; and ls
+end
+
 function psa
     ps -aux | grep $argv[1] | grep -v grep
 end

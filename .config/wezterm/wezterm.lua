@@ -2,19 +2,28 @@ local wezterm = require "wezterm"
 local action = wezterm.action
 local config = {}
 
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
 if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
+-- disable wayland until it has been properly fixed
+-- config.enable_wayland = false
+
+wezterm.on("gui-startup", function(cmd)
+    local _, _, window = wezterm.mux.spawn_window(cmd or {})
+    window:gui_window():maximize()
+end)
+
+-- visual stuff
 config.font = wezterm.font_with_fallback {
-    "JetBrainsMono Nerd Font Mono"
+    -- "Fira Code"
+    -- "Monaspace Radon"
+    "Rec Mono Casual"
 }
+config.default_prog = { "/bin/fish" }
 config.font_size = 16.0
-
+config.cursor_blink_rate = 0
 config.default_cursor_style = "SteadyBar"
-
 config.enable_scroll_bar = false
 config.enable_tab_bar = false
 config.window_padding = {
@@ -23,8 +32,13 @@ config.window_padding = {
     top = 5,
     bottom = 0,
 }
-config.leader = { mods = "CTRL", key = "a" }
 
+-- ibus integration
+config.use_ime = true
+config.xim_im_name = "ibus"
+
+-- keybindings
+config.leader = { mods = "CTRL", key = "a" }
 config.keys = {
     { key = "a",  mods = "LEADER|CTRL", action = wezterm.action { SendString = "\x01" } },
     { key = "-",  mods = "LEADER",      action = action { SplitVertical = { domain = "CurrentPaneDomain" } } },
@@ -35,16 +49,28 @@ config.keys = {
     { key = "k",  mods = "LEADER",      action = action { ActivatePaneDirection = "Up" } },
     { key = "l",  mods = "LEADER",      action = action { ActivatePaneDirection = "Right" } },
     { key = "x",  mods = "LEADER",      action = action { CloseCurrentPane = { confirm = false } } },
-    { key = "b",  mods = "LEADER",      action = action.ActivateTabRelative(-1) },
+    { key = "p",  mods = "LEADER",      action = action.ActivateTabRelative(-1) },
     { key = "n",  mods = "LEADER",      action = action.ActivateTabRelative(1) },
     { key = "[",  mods = "LEADER",      action = action.ActivateCopyMode },
+    { key = "g",  mods = "LEADER",      action = wezterm.action.ShowTabNavigator },
     {
         key = "]",
         mods = "LEADER",
-        action = action.Search { CaseInSensitiveString = "hash" },
+        action = action.Search { CaseInSensitiveString = "" },
+    },
+
+    -- gdb stuff
+    { key = "F5",  action = wezterm.action { SendString = "continue\n" } },
+    { key = "F10", action = wezterm.action { SendString = "next\n" } },
+    { key = "F11", action = wezterm.action { SendString = "step\n" } },
+    {
+        key = "F11",
+        mods = "SHIFT",
+        action = wezterm.action { SendString = "finish\n" }
     },
 }
 
+-- moonlight
 config.colors = {
     foreground = "#a8aeb4",
     background = "#1F2224",
@@ -53,33 +79,15 @@ config.colors = {
     cursor_fg = "#1F2224",
     cursor_border = "#6a7175",
 
-    selection_fg = "#1F2224",
-    selection_bg = "#a8aeb4",
+    selection_fg = "#a8aeb4",
+    selection_bg = "#44494c",
 
     split = "#7e858a",
 
-    ansi = {
-        "#4b5054",
-        "#738b58",
-        "#d89e98",
-        "#c9bb7f",
-        "#51849e",
-        "#876aa8",
-        "#42868d",
-        "#8b9297",
-    },
-    brights = {
-        "#62696d",
-        "#d89e98",
-        "#738b58",
-        "#c9bb7f",
-        "#51849e",
-        "#cb98c3",
-        "#42868d",
-        "#9ba2a7",
-    },
+    ansi = { "#4b5054", "#d89e98", "#738b58", "#c9bb7f", "#51849e", "#876aa8", "#42868d", "#8b9297" },
+    brights = { "#62696d", "#d5a37b", "#738b58", "#c9bb7f", "#51849e", "#c59eb4", "#42868d", "#9ba2a7" },
 
-    -- I don"t need leader hinting
+    -- I don't need leader hinting
     compose_cursor = "#6a7175",
 }
 

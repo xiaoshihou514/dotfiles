@@ -1,5 +1,3 @@
-alias wget='wget --no-check-certificate'
-alias curl='curl --insecure'
 alias ls='eza --group-directories-first --icons --git'
 alias ll='ls -lhG'
 alias la='ls -lahG'
@@ -10,8 +8,15 @@ alias less='bat --paging always --style=plain'
 alias grep='grep --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
+alias wget='wget --no-check-certificate'
+alias curl='curl --insecure'
+alias u='cd ..'
+alias uu='cd ../..'
+alias uuu='cd ../../..'
 
 alias gs='git status'
+alias gc='git checkout'
+alias gp='git pull'
 
 alias vim=nvim
 alias vi='nvim --clean -c "set cb=unnamedplus"'

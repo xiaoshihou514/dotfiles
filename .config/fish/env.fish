@@ -12,6 +12,7 @@ fish_add_path $HOME/Applications/android_sdk/cmdline-tools/latest/bin
 fish_add_path $HOME/.gem/bin
 fish_add_path $HOME/.local/share/coursier/bin
 fish_add_path $HOME/.local/share/juliaup/bin
+fish_add_path $HOME/Applications/c-tools/bin
 
 # Setup programs
 zoxide init fish | source
@@ -27,3 +28,7 @@ set -g GLFW_IM_MODULE ibus
 flamegraph --completions fish | source
 
 set -g HF_ENDPOINT https://hf-mirror.com
+
+set -Ua fish_user_paths "$HOME/.rye/shims"
+
+set -g LATEXINDENT_CONFIG "$HOME/.config/latexindent/indentconfig.yaml"
