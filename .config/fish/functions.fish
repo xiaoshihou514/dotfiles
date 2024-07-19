@@ -1,14 +1,14 @@
 function proxy
-    set port "127.0.0.1:9910"
-    if test -n "$http_proxy" -a "$http_proxy" -eq $port; and test -n "$https_proxy" -a "$https_proxy" -eq $port
+    set port "127.0.0.1:7897"
+    if test -n "$http_proxy" -a "$http_proxy" = $port; and test -n "$https_proxy" -a "$https_proxy" = $port
         set -g http_proxy ''
         set -g https_proxy ''
         echo 'Proxy closed'
-        return
+    else
+        set -g http_proxy $port
+        set -g https_proxy $port
+        echo 'Proxy ready'
     end
-    set -g http_proxy $port
-    set -g https_proxy $port
-    echo 'Proxy ready'
 end
 
 function full-upgrade
@@ -22,17 +22,23 @@ end
 
 function cd
     builtin cd $argv
-    test (/bin/ls -l | count) -lt 141; and ls
+    if test (/bin/ls -l | count) -lt 141
+        ls
+    end
 end
 
 function z
     __zoxide_z $argv
-    test (/bin/ls -l | count) -lt 141; and ls
+    if test (/bin/ls -l | count) -lt 141
+        ls
+    end
 end
 
 function zi
     __zoxide_zi $argv
-    test (/bin/ls -l | count) -lt 141; and ls
+    if test (/bin/ls -l | count) -lt 141
+        ls
+    end
 end
 
 function psa
@@ -51,8 +57,8 @@ function audio-truncate
 end
 
 function update-neovim
-    set url "https://github.com/neovim/neovim/releases/download/nightly/"
-    # set url "https://mirror.ghproxy.com/https://github.com/neovim/neovim/releases/download/nightly/"
+    # set url "https://github.com/neovim/neovim/releases/download/nightly/"
+    set url "https://mirror.ghproxy.com/https://github.com/neovim/neovim/releases/download/nightly/"
     set tarball "nvim-linux64.tar.gz"
     set chksum "nvim-linux64.tar.gz.sha256sum"
     builtin cd $HOME/Applications/
@@ -105,9 +111,28 @@ function man
 end
 
 function subaudio
-    if test $argc != 4
+    if test (count $argv) -ne 4
         echo subaudio [file] [start] [length] [out]
         return
     end
     ffmpeg -i $argv[1] -ss $argv[2] -t $argv[3] $argv[4]
+end
+
+function create-desktop
+    read -l -P "Name: " name
+    if not test name
+        return
+    end
+    read -l -P "Icon path: " icon_path
+    set file "$HOME/.local/share/applications/$name.desktop"
+    echo "\
+[Desktop Entry]
+Exec=$(pwd)/$argv" >$file
+    if test icon_path
+        echo "Icon=$(pwd)/$icon_path" >>$file
+    end
+    echo "\
+Type=Application
+Name=$name
+" >>$file
 end
