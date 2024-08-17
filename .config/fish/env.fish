@@ -39,3 +39,5 @@ set -g LATEXINDENT_CONFIG "$HOME/.config/latexindent/indentconfig.yaml"
 
 set -g RUSTUP_DIST_SERVER "https://rsproxy.cn"
 set -g RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
+
+set -g FZF_DEFAULT_COMMAND 'fd -H --type f --strip-cwd-prefix'

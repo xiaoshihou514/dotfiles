@@ -15,13 +15,17 @@ wezterm.on("gui-startup", function(cmd)
 end)
 
 -- visual stuff
-config.font = wezterm.font_with_fallback({
-	"Fira Code"
+config.font = wezterm.font(
+	"Fira Code",
 	-- "Monaspace Radon"
 	-- "Rec Mono Casual",
-})
+	{
+		-- weight = "Medium",
+	}
+)
 config.default_prog = { "/bin/fish" }
 config.font_size = 16.0
+config.custom_block_glyphs = false
 config.cursor_blink_rate = 0
 config.default_cursor_style = "SteadyBar"
 config.enable_scroll_bar = false
