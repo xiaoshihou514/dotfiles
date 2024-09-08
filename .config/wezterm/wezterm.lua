@@ -24,7 +24,7 @@ config.font = wezterm.font(
 	}
 )
 config.default_prog = { "/bin/fish" }
-config.font_size = 16.0
+config.font_size = 15.0
 config.custom_block_glyphs = false
 config.cursor_blink_rate = 0
 config.default_cursor_style = "SteadyBar"
