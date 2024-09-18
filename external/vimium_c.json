@@ -1,16 +1,28 @@
 {
 	"name": "Vimium C",
-	"@time": "25/08/2023, 14:24:32",
-	"time": 1692944672944,
+	"@time": "31/08/2024, 13:15:09",
+	"time": 1725081309077,
 	"environment": {
-		"extension": "1.99.995",
+		"extension": "1.99.997",
 		"platform": "linux",
-		"firefox": 116
+		"firefox": 129
 	},
 	"exclusionRules": [
 		{
-			"passKeys": "H J K L O h j k l o r t ",
+			"passKeys": "",
 			"pattern": ":https://monkeytype.com"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://tongyi.aliyun.com"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://config.qmk.fm/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://127.0.0.1:7860/"
 		}
 	],
 	"keyLayout": 2,
@@ -20,8 +32,14 @@
 		"map gt nextTab",
 		"map <c-o> goForward",
 		"map <c-i> goBack",
-		"map <c-j> scrollPageDown",
-		"map <c-k> scrollPageUp",
+		"map <c-d> scrollPageDown",
+		"map <c-u> scrollPageUp",
+		"unmap J",
+		"unmap K",
+		"unmap <f8>",
+		"unmap v",
+		"unmap ^",
+		"unmap d",
 		""
 	],
 	"localeEncoding": "",
