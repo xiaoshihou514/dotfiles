@@ -14,6 +14,7 @@ fish_add_path $HOME/.local/share/coursier/bin
 fish_add_path $HOME/.local/share/juliaup/bin
 fish_add_path $HOME/Applications/c-tools/bin
 fish_add_path $HOME/Applications/zig-13/
+fish_add_path $HOME/Applications/jdt-language-server-1.41.0-202410021526/bin/
 
 # SSH
 for key in (/bin/ls $HOME/.ssh | grep -E -v "\.pub\$|^known_hosts")
@@ -41,3 +42,5 @@ set -g RUSTUP_DIST_SERVER "https://rsproxy.cn"
 set -g RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
 
 set -g FZF_DEFAULT_COMMAND 'fd -H --type f --strip-cwd-prefix'
+
+eval $(luarocks path --no-bin --lua-version 5.1)

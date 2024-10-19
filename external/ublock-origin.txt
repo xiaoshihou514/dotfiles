@@ -61,3 +61,8 @@ blog.csdn.net##.csdn-toolbar-fl.toolbar-menus > li
 blog.csdn.net##.left-toolbox
 blog.csdn.net##.passport-login-mark
 blog.csdn.net##.passport-login-container
+www.bilibili.com##.next-play
+www.bilibili.com##.tag-panel
+www.bilibili.com##.right-bottom-banner.ad-floor-exp.ad-report
+www.bilibili.com##.left-banner.ad-floor-exp.ad-report
+www.bilibili.com##bili-comments
