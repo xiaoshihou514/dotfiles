@@ -15,6 +15,7 @@ fish_add_path $HOME/.local/share/juliaup/bin
 fish_add_path $HOME/Applications/c-tools/bin
 fish_add_path $HOME/Applications/zig-13/
 fish_add_path $HOME/Applications/jdt-language-server-1.41.0-202410021526/bin/
+fish_add_path $HOME/Applications/idea-IU-242.23726.103/bin
 
 # SSH
 for key in (/bin/ls $HOME/.ssh | grep -E -v "\.pub\$|^known_hosts")

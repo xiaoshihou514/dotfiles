@@ -58,7 +58,7 @@ end
 
 function update-neovim
     set url "https://github.com/neovim/neovim/releases/download/nightly/"
-    # set url "https://mirror.ghproxy.com/https://github.com/neovim/neovim/releases/download/nightly/"
+    # set url "https://ghp.ci/https://github.com/neovim/neovim/releases/download/nightly/"
     set tarball "nvim-linux64.tar.gz"
     set chksum "nvim-linux64.tar.gz.sha256sum"
     builtin cd $HOME/Applications/

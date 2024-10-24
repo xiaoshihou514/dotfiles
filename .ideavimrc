@@ -1,0 +1,31 @@
+set scrolloff=5
+set incsearch
+set NERDTree
+set clipboard=unnamedplus
+
+let mapleader = " "
+
+imap qi <Esc>
+nmap H ^
+nmap L $
+xmap H ^
+xmap L $
+omap H ^
+omap L $
+nmap <leader>q :q<cr>
+nmap <leader>w :w<cr>
+nmap = <C-a>
+nmap - <C-x>
+
+nmap gq <Action>(ReformatCode)
+nmap go <Action>(ShowIntentionActions)
+nmap gl <Action>(ShowErrorDescription)
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap <leader>c <Action>(CommentByLineComment)
+nmap <leader>g <Action>(FindInPath)
+
+nmap <leader>e :NERDTreeToggle<cr>
+let g:NERDTreeMapNewFile = "c"
+let g:NERDTreeMapOpenSplit = "<C-o>"
+let g:NERDTreeMapOpenVSplit = "<C-x>"
