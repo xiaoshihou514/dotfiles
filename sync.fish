@@ -9,8 +9,5 @@ function sync
     echo "Error: $argv[1] not found"
 end
 
-sync nvim
 sync fish
 sync wezterm
-sync fastfetch
-sync xournalpp

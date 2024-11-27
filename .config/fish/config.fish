@@ -1,5 +1,8 @@
 function source_config
-    source $HOME/.config/fish/$argv[1]
+    set target $HOME/.config/fish/$argv[1]
+    if test -e $target
+        source $target
+    end
 end
 
 if status is-interactive
