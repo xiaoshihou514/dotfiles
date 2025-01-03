@@ -136,3 +136,22 @@ Type=Application
 Name=$name
 " >>$file
 end
+
+function vimg
+    set nvim (which nvim)
+    echo 'Type to start grepping' | fzf \
+        --layout=reverse \
+        --disabled --ansi \
+        --border=sharp \
+        --delimiter : \
+        --preview='bat --theme=moonlight-ansi --color=always -pp --highlight-line {2} {1}' \
+        --preview-window '+{2}/2' \
+        --bind "change:reload:rg --column --color=always {q} || :" \
+        --bind "enter:become:$nvim {1}"
+end
+
+function each
+    for f in *
+        $argv $f
+    end
+end

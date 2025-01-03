@@ -36,6 +36,7 @@ abbr gsr 'git remote set-url origin'
 
 alias vim nvim
 alias vi 'nvim --clean -c "set cb=unnamedplus"'
+alias visudo 'sudo (which nvim) --clean -c "set cb=unnamedplus"'
 alias vimf 'vim $(fzf) -c "if argc() == 0 | qa! | endif"'
 
 abbr gitsquash 'git reset --soft HEAD~'
