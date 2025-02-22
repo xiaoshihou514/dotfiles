@@ -59,12 +59,13 @@ end
 function update-neovim
     set url "https://github.com/neovim/neovim/releases/download/nightly/"
     # set url "https://ghp.ci/https://github.com/neovim/neovim/releases/download/nightly/"
-    set tarball "nvim-linux64.tar.gz"
-    set chksum "nvim-linux64.tar.gz.sha256sum"
+    set tarball "nvim-linux-x86_64.tar.gz"
+    set chksum "shasum.txt"
     builtin cd $HOME/Applications/
     wget $url$tarball
     wget $url$chksum
-    if test (sha256sum -c $chksum) != "nvim-linux64.tar.gz: OK"
+    echo (grep $tarball $chksum) | sha256sum --check --status
+    if test $status != 0
         set_color red
         echo "Neovim binary corrupted!"
         set_color normal
@@ -75,7 +76,7 @@ function update-neovim
     echo "sha256 verified"
     rm -rf nvim-nightly 2>/dev/null
     tar -xf $tarball
-    mv nvim-linux64 nvim-nightly
+    mv nvim-linux-x86_64 nvim-nightly
     rm $tarball $chksum
     echo "Neovim updated successfully"
     echo
@@ -135,6 +136,11 @@ Exec=$(pwd)/$argv" >$file
 Type=Application
 Name=$name
 " >>$file
+end
+
+function vimf
+    set nvim (which nvim)
+    $nvim $(fzf) -c "if argc() == 0 | qa! | endif"
 end
 
 function vimg
