@@ -8,7 +8,6 @@ fish_add_path $HOME/Applications/detekt-cli-1.23.3/bin
 fish_add_path $HOME/Applications/flutter/bin
 fish_add_path $HOME/Applications/android_sdk/cmdline-tools/latest/bin
 fish_add_path $HOME/.local/share/coursier/bin
-fish_add_path $HOME/Applications/zig-13/
 fish_add_path $HOME/Applications/idea-IU-242.23726.103/bin
 
 # SSH
@@ -39,3 +38,5 @@ set -gx FZF_DEFAULT_COMMAND 'fd -H --type f --strip-cwd-prefix'
 eval $(luarocks path --no-bin --lua-version 5.1)
 
 test -r "$HOME/.opam/opam-init/init.fish"; and source "$HOME/.opam/opam-init/init.fish" >/dev/null 2>/dev/null
+
+set -gx MANPAGER 'nvim +Man!'

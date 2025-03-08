@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 -- disable wayland until it has been properly fixed
--- config.enable_wayland = false
+config.enable_wayland = false
 
 wezterm.on("gui-startup", function(cmd)
 	local _, _, window = wezterm.mux.spawn_window(cmd or {})

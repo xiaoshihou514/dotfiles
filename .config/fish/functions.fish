@@ -105,12 +105,6 @@ function icat
     end
 end
 
-function man
-    vi "+tab Man $argv" \
-        "+norm gt" \
-        "+quit"
-end
-
 function subaudio
     if test (count $argv) -ne 4
         echo subaudio [file] [start] [length] [out]

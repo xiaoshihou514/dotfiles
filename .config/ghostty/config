@@ -1,0 +1,18 @@
+command = "fish"
+shell-integration = fish
+
+font-family = "Fira Code"
+font-size = 16
+maximize = true
+gtk-tabs-location = hidden
+
+keybind = ctrl+a>c=new_tab
+keybind = ctrl+a>n=next_tab
+keybind = ctrl+a>p=previous_tab
+keybind = ctrl+a>x=close_surface
+keybind = ctrl+a>l=goto_split:right
+keybind = ctrl+a>k=goto_split:up
+keybind = ctrl+a>j=goto_split:down
+keybind = ctrl+a>h=goto_split:left
+keybind = ctrl+a>\=new_split:right
+keybind = ctrl+a>-=new_split:down
