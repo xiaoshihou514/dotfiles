@@ -16,15 +16,23 @@ for key in (/bin/ls $HOME/.ssh | grep -E -v "\.pub\$|^known_hosts")
 end
 
 # Setup programs
-zoxide init fish | source
+if test zoxide then
+    zoxide init fish | source
+end
 
-flutter config --android-sdk $HOME/Applications/android_sdk/ >/dev/null &
+if test flutter then
+    flutter config --android-sdk $HOME/Applications/android_sdk/ >/dev/null &
+end
 
-wezterm shell-completion --shell fish | source
+if test wezterm then
+    wezterm shell-completion --shell fish | source
+end
 
 set -gx GLFW_IM_MODULE ibus
 
-. $HOME/.nix-profile/etc/profile.d/nix.fish
+if test -f $HOME/.nix-profile/etc/profile.d/nix.fish then
+    . $HOME/.nix-profile/etc/profile.d/nix.fish
+end
 
 set -gx HF_ENDPOINT https://hf-mirror.com
 
@@ -35,7 +43,9 @@ set -gx RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
 
 set -gx FZF_DEFAULT_COMMAND 'fd -H --type f --strip-cwd-prefix'
 
-eval $(luarocks path --no-bin --lua-version 5.1)
+if test luarocks then
+    eval $(luarocks path --no-bin --lua-version 5.1)
+end
 
 test -r "$HOME/.opam/opam-init/init.fish"; and source "$HOME/.opam/opam-init/init.fish" >/dev/null 2>/dev/null
 

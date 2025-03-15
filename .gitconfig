@@ -1,14 +1,14 @@
+# vim:sw=4:expandtab:tabstop=4:
 [user]
-	email = xiaoshihou@tutamail.com
-	name = xiaoshihou514
+    email = xiaoshihou@tutamail.com
+    name = xiaoshihou
 [init]
-	defaultBranch = main
-
-#[http]
-#	sslCAInfo = /home/xiaoshihou/.local/share/Steam++/Plugins/Accelerator/SteamTools.Certificate.cer
+    defaultBranch = main
 
 [core]
+    editor = nvim
     pager = delta
+    autocrlf = input
 
 [interactive]
     diffFilter = delta --color-only
@@ -16,9 +16,23 @@
 [delta]
     navigate = true    # use n and N to move between diff sections
     dark = true
+    side-by-side = true
 
 [merge]
     conflictstyle = diff3
+    prompt = false
+    tool = nvimdiff
 
 [diff]
     colorMoved = default
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[push]
+    autoSetupRemote = true
+
+#[http]
+#    sslCAInfo = /home/xiaoshihou/.local/share/Steam++/Plugins/Accelerator/SteamTools.Certificate.cer

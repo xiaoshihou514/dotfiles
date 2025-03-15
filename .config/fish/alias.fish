@@ -1,12 +1,21 @@
-alias ls 'eza --group-directories-first --icons --git'
-alias ll 'ls -lhG'
-alias la 'ls -lahG'
-alias tree 'eza --git-ignore -lT --icons'
-alias cat 'bat -pp'
-alias less 'bat --style=plain --paging=always'
 alias cp 'cp -i'
 alias mv 'mv -i'
 alias df duf
+
+if test eza then
+    alias ls 'eza --group-directories-first --icons --git'
+    alias tree 'eza --git-ignore -lT --icons'
+end
+alias ll 'ls -lhG'
+alias la 'ls -lahG'
+
+if test bat || test batcat then
+    if test batcat then
+        alias bat batcat
+    end
+    alias cat 'bat -pp'
+    alias less 'bat --style=plain --paging=always'
+end
 
 abbr u 'cd ..'
 abbr uu 'cd ../..'
@@ -14,6 +23,9 @@ abbr uuu 'cd ../../..'
 abbr uuuu 'cd ../../../..'
 abbr uuuuu 'cd ../../../../..'
 
+if test fdfind then
+    alias fd fdfind
+end
 if not test fd
     abbr fd 'find . -name'
 end
@@ -48,3 +60,4 @@ alias ytvid 'yt-dlp --proxy "https://127.0.0.1:9910" -c -N 16'
 alias ytaud 'yt-dlp -x'
 alias bili 'bilix s -d . -vc 32 -oa'
 alias tokei 'tokei -s code'
+alias tokei-pie 'tokei -o json | tokei-pie'
