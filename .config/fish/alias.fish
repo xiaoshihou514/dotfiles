@@ -2,15 +2,18 @@ alias cp 'cp -i'
 alias mv 'mv -i'
 alias df duf
 
-if test eza then
+if type -q eza then
     alias ls 'eza --group-directories-first --icons --git'
     alias tree 'eza --git-ignore -lT --icons'
+    alias ll 'ls -lhG'
+    alias la 'ls -lahG'
+else
+    alias ll 'ls -lh'
+    alias la 'ls -lah'
 end
-alias ll 'ls -lhG'
-alias la 'ls -lahG'
 
-if test bat || test batcat then
-    if test batcat then
+if type -q bat || type -q batcat then
+    if type -q batcat then
         alias bat batcat
     end
     alias cat 'bat -pp'
@@ -23,13 +26,13 @@ abbr uuu 'cd ../../..'
 abbr uuuu 'cd ../../../..'
 abbr uuuuu 'cd ../../../../..'
 
-if test fdfind then
+if type -q fdfind then
     alias fd fdfind
 end
-if not test fd
+if not type -q fd
     abbr fd 'find . -name'
 end
-if not test rg
+if not type -q rg
     abbr rg "grep -Ri"
     alias grep 'grep --color=auto'
 end

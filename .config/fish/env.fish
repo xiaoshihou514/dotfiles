@@ -16,21 +16,21 @@ for key in (/bin/ls $HOME/.ssh | grep -E -v "\.pub\$|^known_hosts")
 end
 
 # Setup programs
-if test zoxide then
+if type -q zoxide then
     zoxide init fish | source
 end
 
-if test flutter then
+if type -q flutter then
     flutter config --android-sdk $HOME/Applications/android_sdk/ >/dev/null &
 end
 
-if test wezterm then
+if type -q wezterm then
     wezterm shell-completion --shell fish | source
 end
 
 set -gx GLFW_IM_MODULE ibus
 
-if test -f $HOME/.nix-profile/etc/profile.d/nix.fish then
+if type -q -f $HOME/.nix-profile/etc/profile.d/nix.fish then
     . $HOME/.nix-profile/etc/profile.d/nix.fish
 end
 
@@ -43,7 +43,7 @@ set -gx RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
 
 set -gx FZF_DEFAULT_COMMAND 'fd -H --type f --strip-cwd-prefix'
 
-if test luarocks then
+if type -q luarocks then
     eval $(luarocks path --no-bin --lua-version 5.1)
 end
 
