@@ -1,10 +1,14 @@
 command = "fish"
 shell-integration = fish
+shell-integration-features = no-cursor
 
 font-family = "Fira Code"
-font-size = 16
+font-size = 15
+
+cursor-style-blink = false
 maximize = true
 gtk-tabs-location = hidden
+app-notifications = no-clipboard-copy
 
 keybind = ctrl+a>c=new_tab
 keybind = ctrl+a>n=next_tab
@@ -16,3 +20,27 @@ keybind = ctrl+a>j=goto_split:down
 keybind = ctrl+a>h=goto_split:left
 keybind = ctrl+a>\=new_split:right
 keybind = ctrl+a>-=new_split:down
+
+palette = 0=#4b5054
+palette = 1=#d89e98
+palette = 2=#738b58
+palette = 3=#c9bb7f
+palette = 4=#51849e
+palette = 5=#876aa8
+palette = 6=#42868d
+palette = 7=#8b9297
+palette = 8=#62696d
+palette = 9=#d5a37b
+palette = 10=#738b58
+palette = 11=#c9bb7f
+palette = 12=#51849e
+palette = 13=#c59eb4
+palette = 14=#42868d
+palette = 15=#9ba2a7
+
+background = 1F2224
+foreground = a8aeb4
+cursor-color = 6a7175
+cursor-text = 1F2224
+selection-background = 44494c
+selection-foreground = a8aeb4

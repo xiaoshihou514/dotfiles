@@ -5,8 +5,8 @@ alias df duf
 if type -q eza then
     alias ls 'eza --group-directories-first --icons --git'
     alias tree 'eza --git-ignore -lT --icons'
-    alias ll 'ls -lhG'
-    alias la 'ls -lahG'
+    alias ll 'ls -lh'
+    alias la 'ls -lah'
 else
     alias ll 'ls -lh'
     alias la 'ls -lah'
@@ -63,4 +63,4 @@ alias ytvid 'yt-dlp --proxy "https://127.0.0.1:9910" -c -N 16'
 alias ytaud 'yt-dlp -x'
 alias bili 'bilix s -d . -vc 32 -oa'
 alias tokei 'tokei -s code'
-alias tokei-pie 'tokei -o json | tokei-pie'
+alias tokeipie 'tokei -o json | tokei-pie'
