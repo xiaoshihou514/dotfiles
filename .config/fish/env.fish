@@ -9,6 +9,8 @@ fish_add_path $HOME/Applications/flutter/bin
 fish_add_path $HOME/Applications/android_sdk/cmdline-tools/latest/bin
 fish_add_path $HOME/.local/share/coursier/bin
 fish_add_path $HOME/Applications/idea-IU-242.23726.103/bin
+fish_add_path $HOME/.cabal/bin
+fish_add_path $HOME/.ghcup/bin
 
 # SSH
 for key in (/bin/ls $HOME/.ssh | grep -E -v "\.pub\$|^known_hosts")
@@ -21,7 +23,7 @@ if type -q zoxide then
 end
 
 if type -q flutter then
-    flutter config --android-sdk $HOME/Applications/android_sdk/ >/dev/null &
+    flutter config --android-sdk $HOME/Applications/android_sdk/ >/dev/null
 end
 
 if type -q wezterm then

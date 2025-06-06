@@ -37,6 +37,11 @@ if not type -q rg
     alias grep 'grep --color=auto'
 end
 
+if type -q flutter then
+    abbr pub 'flutter pub'
+    abbr fl flutter
+end
+
 abbr g lazygit
 abbr gs 'git status'
 abbr gc 'git clone'

@@ -57,8 +57,8 @@ function audio-truncate
 end
 
 function update-neovim
-    # set url "https://github.com/neovim/neovim/releases/download/nightly/"
-    set url "https://ghfast.top/https://github.com/neovim/neovim/releases/download/nightly/"
+    set url "https://github.com/neovim/neovim/releases/download/nightly/"
+    # set url "https://ghfast.top/https://github.com/neovim/neovim/releases/download/nightly/"
     set tarball "nvim-linux-x86_64.tar.gz"
     set chksum "shasum.txt"
     builtin cd $HOME/Applications/
