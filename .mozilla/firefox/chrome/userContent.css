@@ -1,10 +1,3 @@
-@-moz-document url("about:blank"),
-url("about:newtab") {
-  body {
-    background: url("wallpaper/星降る天魔の山_96426550.png") center/cover no-repeat fixed !important;
-  }
-}
-
 /* invert pdf colors */
 #sidebarContainer > #sidebarContent > #thumbnailView {
     --sidebaritem-bg-color: #38383D;
