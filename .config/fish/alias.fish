@@ -53,6 +53,7 @@ abbr ga 'git add -A'
 abbr gam 'git add -A && git commit --amend --no-edit'
 abbr ggr 'git remote get-url origin'
 abbr gsr 'git remote set-url origin'
+abbr gar 'git remote add origin'
 
 alias vim nvim
 alias vi 'nvim --clean -c "set cb=unnamedplus"'
@@ -69,3 +70,4 @@ alias ytaud 'yt-dlp -x'
 alias bili 'bilix s -d . -vc 32 -oa'
 alias tokei 'tokei -s code'
 alias tokeipie 'tokei -o json | tokei-pie'
+alias frbc flutter_rust_bridge_codegen

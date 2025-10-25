@@ -11,8 +11,12 @@ fish_add_path $HOME/.local/share/coursier/bin
 fish_add_path $HOME/Applications/idea-IU-242.23726.103/bin
 fish_add_path $HOME/.cabal/bin
 fish_add_path $HOME/.ghcup/bin
+fish_add_path $HOME/.dotnet/tools
 
 # SSH
+set ssh_settings (ssh-agent -s)
+set -gx SSH_AUTH_SOCK (echo $ssh_settings | grep 'SSH_AUTH_SOCK=' | cut -d= -f2 | cut -d';' -f1)
+set -gx SSH_AGENT_PID (echo $ssh_settings | grep 'SSH_AGENT_PID=' | cut -d= -f2 | cut -d';' -f1)
 for key in (/bin/ls $HOME/.ssh | grep -E -v "\.pub\$|^known_hosts")
     ssh-add $HOME/.ssh/$key 2>/dev/null
 end
@@ -23,7 +27,10 @@ if type -q zoxide then
 end
 
 if type -q flutter then
-    flutter config --android-sdk $HOME/Applications/android_sdk/ >/dev/null
+    set -gx FL_ANDROID_SDK $HOME/Applications/android-studio-sdk
+    # flutter config --android-sdk $FL_ANDROID_SDK >/dev/null &
+    set -gx PUB_HOSTED_URL "https://pub.flutter-io.cn"
+    set -gx FLUTTER_STORAGE_BASE_URL "https://storage.flutter-io.cn"
 end
 
 if type -q wezterm then
@@ -52,3 +59,7 @@ end
 test -r "$HOME/.opam/opam-init/init.fish"; and source "$HOME/.opam/opam-init/init.fish" >/dev/null 2>/dev/null
 
 set -gx MANPAGER 'nvim +Man!'
+
+set -gx XWECHAT "$HOME/.var/app/com.tencent.WeChat/xwechat_files/"
+
+set -gx UV_DEFAULT_INDEX "https://mirrors.aliyun.com/pypi/simple"

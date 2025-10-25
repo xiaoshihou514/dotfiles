@@ -57,44 +57,35 @@ function audio-truncate
 end
 
 function update-neovim
-    set url "https://github.com/neovim/neovim/releases/download/nightly/"
-    # set url "https://ghfast.top/https://github.com/neovim/neovim/releases/download/nightly/"
+    # set url "https://github.com/neovim/neovim/releases/download/nightly/"
+    set url "https://ghfast.top/https://github.com/neovim/neovim/releases/download/nightly/"
     set tarball "nvim-linux-x86_64.tar.gz"
-    set chksum "shasum.txt"
     builtin cd $HOME/Applications/
     wget $url$tarball
-    wget $url$chksum
-    echo (grep $tarball $chksum) | sha256sum --check --status
-    if test $status != 0
-        set_color red
-        echo "Neovim binary corrupted!"
-        set_color normal
-        rm $tarball $chksum
-        builtin cd $OLDPWD
-        return 1
-    end
-    echo "sha256 verified"
     rm -rf nvim-nightly 2>/dev/null
     tar -xf $tarball
     mv nvim-linux-x86_64 nvim-nightly
-    rm $tarball $chksum
+    rm $tarball
     echo "Neovim updated successfully"
     echo
     ./nvim-nightly/bin/nvim --version
     builtin cd $OLDPWD
 end
 
-function flac
-    if test (count $argv) -eq 1
-        set extension $argv[1]
-        for f in *.$extension
-            set out (string replace -r '\.'$extension'$' '.flac' $f)
-            ffmpeg -i $f -c:a flac $out; or echo "mission for $out failed" && return
-        end
-        rm *.$extension
-    else
-        echo "only accepts one argument"
+function trash
+    for f in $argv
+        set rp (realpath $f)
+        kioclient move "file://$rp" 'trash:/'
     end
+end
+
+function atr
+    set dest $argv[1]
+    for f in $argv[2..-1]
+        set out (string replace -r '\..+$' ".$dest" $f)
+        ffmpeg -i $f $out; or echo "mission for $out failed" && return
+    end
+    trash $argv[2..-1]
 end
 
 function icat
@@ -154,4 +145,21 @@ function each
     for f in *
         $argv $f
     end
+end
+
+function wireless-adb
+    set adb "$FL_ANDROID_SDK/platform-tools/adb"
+    $adb devices
+    if not test (ps -aux | rg adb | rg fork-server)
+        echo "adbd not running..."
+        $adb tcpip 5555
+    else
+        echo "adbd is running, connect"
+    end
+    $adb connect $argv
+end
+
+function merge
+	bash -c 'find . -maxdepth 1 -name "*.AVI" -printf "file \'%p\'\n" | sort > target.txt'
+	ffmpeg -f concat -safe 0 -i target.txt -c copy $argv
 end
