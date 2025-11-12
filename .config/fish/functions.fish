@@ -90,9 +90,13 @@ end
 
 function icat
     if test $TERM = xterm-kitty
-        kitty +kitten icat $argv
+	for f in $argv
+            kitty +kitten icat $f
+        end
     else if test $TERM = xterm-256color
-        wezterm imgcat $argv
+	for f in $argv
+            wezterm imgcat $f
+        end
     end
 end
 
