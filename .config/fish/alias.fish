@@ -70,4 +70,4 @@ alias ytaud 'yt-dlp -x'
 alias bili 'bilix s -d . -vc 32 -oa'
 alias tokei 'tokei -s code'
 alias tokeipie 'tokei -o json | tokei-pie'
-alias frbc flutter_rust_bridge_codegen
+abbr sshp 'ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password'

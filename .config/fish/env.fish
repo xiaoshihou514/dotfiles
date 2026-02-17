@@ -12,6 +12,8 @@ fish_add_path $HOME/Applications/idea-IU-242.23726.103/bin
 fish_add_path $HOME/.cabal/bin
 fish_add_path $HOME/.ghcup/bin
 fish_add_path $HOME/.dotnet/tools
+fish_add_path $HOME/.elan/bin
+fish_add_path $HOME/.opencode/bin
 
 # SSH
 set ssh_settings (ssh-agent -s)
@@ -63,3 +65,5 @@ set -gx MANPAGER 'nvim +Man!'
 set -gx XWECHAT "$HOME/.var/app/com.tencent.WeChat/xwechat_files/"
 
 set -gx UV_DEFAULT_INDEX "https://mirrors.aliyun.com/pypi/simple"
+
+tirith init --shell fish | source
