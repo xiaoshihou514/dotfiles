@@ -9,8 +9,8 @@ end
 
 update fish
 update kitty
-update wezterm
-update ghostty
+# update wezterm
+# update ghostty
 
 git add .
 lazygit

@@ -3,19 +3,22 @@ alias mv 'mv -i'
 alias df duf
 
 if type -q eza then
-    alias ls 'eza --group-directories-first --icons --git'
-    alias tree 'eza --git-ignore -lT --icons'
-    alias ll 'ls -lh'
-    alias la 'ls -lah'
-else
-    alias ll 'ls -lh'
-    alias la 'ls -lah'
-end
-
-if type -q bat || type -q batcat then
-    if type -q batcat then
-        alias bat batcat
+    alias ls 'eza --group-directories-first --icons --git --time-style "+%_m月%_d日 %_H:%_M"'
+    function tree
+        if git check-ignore $argv
+            eza -lT --icons $argv
+        else
+            eza --git-ignore -lT --icons $argv
+        end
     end
+end
+alias ll 'ls -lh'
+alias la 'ls -lah'
+
+if type -q batcat then
+    alias bat batcat
+end
+if type -q bat then
     alias cat 'bat -pp'
     alias less 'bat --style=plain --paging=always'
 end
@@ -26,7 +29,7 @@ abbr uuu 'cd ../../..'
 abbr uuuu 'cd ../../../..'
 abbr uuuuu 'cd ../../../../..'
 
-if type -q fdfind then
+if type -q fdfind
     alias fd fdfind
 end
 if not type -q fd
@@ -55,9 +58,11 @@ abbr ggr 'git remote get-url origin'
 abbr gsr 'git remote set-url origin'
 abbr gar 'git remote add origin'
 
-alias vim nvim
-alias vi 'nvim --clean -c "set cb=unnamedplus"'
-alias visudo 'sudo (which nvim) --clean -c "set cb=unnamedplus"'
+if type -q nvim
+    alias vim nvim
+    alias vi 'nvim --clean -c "set cb=unnamedplus"'
+    alias visudo 'sudo (which nvim) --clean -c "set cb=unnamedplus"'
+end
 
 abbr gitsquash 'git reset --soft HEAD~'
 abbr gitcpr 'git clone https://mirror.ghproxy.com/'

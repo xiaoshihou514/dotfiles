@@ -66,4 +66,6 @@ set -gx XWECHAT "$HOME/.var/app/com.tencent.WeChat/xwechat_files/"
 
 set -gx UV_DEFAULT_INDEX "https://mirrors.aliyun.com/pypi/simple"
 
-tirith init --shell fish | source
+if type -q tirith
+    tirith init --shell fish | source
+end
